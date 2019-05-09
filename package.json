@@ -1,0 +1,23 @@
+{
+  "name": "postcss-remove-declaration",
+  "version": "1.0.0",
+  "description": "Remove CSS declarations with ease",
+  "keywords": [
+    "postcss",
+    "postcss-plugin"
+  ],
+  "homepage": "https://github.com/3vilArthas/postcss-remove-declaration#readme",
+  "bugs": {
+    "url": "https://github.com/3vilArthas/postcss-remove-declaration/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3vilArthas/postcss-remove-declaration.git"
+  },
+  "license": "MIT",
+  "author": "Andrew Vasilchuk <andrew.d.vasilchuk@gmail.com>",
+  "main": "index.js",
+  "dependencies": {
+    "postcss": "^7.0.16"
+  }
+}
