@@ -35,7 +35,7 @@ it('should remove a provided declaration only if it has a corresponding value', 
   )
 })
 
-it('should correctly treat !important keword', async () => {
+it('should correctly treat !important keyword', async () => {
   const css = '.a { color: red !important; font-size: 14px; } .b { color: red }'
   const plugins = [plugin({ remove: { '.a': { color: 'red !important' } } })]
   const p = await postcss(plugins).process(css)
