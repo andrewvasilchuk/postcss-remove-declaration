@@ -34,3 +34,12 @@ it('should remove a provided declaration only if it has a corresponding value', 
     `".a { color: red; font-size: 14px; } .b { font-size: 14px }"`,
   )
 })
+
+it('should correctly treat !important keyword', async () => {
+  const css = '.a { color: red !important; font-size: 14px; } .b { color: red }'
+  const plugins = [plugin({ remove: { '.a': { color: 'red !important' } } })]
+  const p = await postcss(plugins).process(css)
+  expect(p.css).toMatchInlineSnapshot(
+    `".a { font-size: 14px; } .b { color: red }"`,
+  )
+})

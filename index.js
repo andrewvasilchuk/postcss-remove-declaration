@@ -1,5 +1,7 @@
 const postcss = require("postcss");
 
+const IMPORTANT = '!important'
+
 module.exports = postcss.plugin("postcss-remove-declaration", function(options) {
   options = options || {};
   const { remove } = options;
@@ -26,8 +28,16 @@ module.exports = postcss.plugin("postcss-remove-declaration", function(options) 
           });
         } else if (typeof toRemove === "object") {
           rule.walkDecls(decl => {
-            if (decl.prop in toRemove && toRemove[decl.prop] === decl.value) {
-              decl.remove();
+            if (decl.prop in toRemove) {
+              let value = toRemove[decl.prop]
+              const hasImportant = value.endsWith(IMPORTANT)
+              if (hasImportant) {
+                value = value.slice(0, -IMPORTANT.length).trim()
+              }
+              if (decl.value === value) {
+                if (decl.important && !hasImportant) return
+                decl.remove()
+              }
             }
           });
         }
