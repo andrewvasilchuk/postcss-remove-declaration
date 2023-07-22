@@ -30,11 +30,11 @@ module.exports = {
         ".c": ["color", "background-color"],
         ".d": {
           color: "crimson",
-          "background-color": "tomato"
-        }
-      }
-    })
-  ]
+          "background-color": "tomato",
+        },
+      },
+    }),
+  ],
 };
 ```
 

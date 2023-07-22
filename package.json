@@ -17,7 +17,14 @@
   "license": "MIT",
   "author": "Andrew Vasilchuk <andrew.d.vasilchuk@gmail.com>",
   "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "postcss": "^7.0.16"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "prettier": "^2.8.8"
   }
 }
